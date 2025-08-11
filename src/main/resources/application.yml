@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  error:
+    whitelabel:
+      enabled: true
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          cloneOnStart: true
+          uri: https://github.com/kevindeyne-ab/sample-config-repo.git
+          searchPaths:
+            - '/{application}/{label}'
+            - '/{application}'
+          default-label: master
+logging:
+  level:
+    root: INFO
